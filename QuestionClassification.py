@@ -1,4 +1,4 @@
-# MyProject
+# QuestionsClassification
 from keras.preprocessing import text
 from keras.utils import np_utils
 from keras.preprocessing import sequence
