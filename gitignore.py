@@ -3,4 +3,4 @@ wiki.tr.txt
 trmodel
 deneme.py
 Untitled.ipynb
-.ipynb_checkpoint
+.ipynb_checkpoints
