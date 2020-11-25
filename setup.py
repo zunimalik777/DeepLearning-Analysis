@@ -9,7 +9,7 @@ import setuptools.command.build_ext
 import wheel.bdist_wheel
 
 _this_dir = os.path.dirname(os.path.abspath(__file__))
-_clib_dir = os.path.join(_this_dir, 'python', 'opencc', 'clib')
+_clib_dir = os.path.join(_this_dir, 'python', 'opentc', 'clib')
 _build_dir = os.path.join(_this_dir, 'build', 'python')
 
 _cmake_file = os.path.join(_this_dir, 'CMakeLists.txt')
@@ -19,16 +19,16 @@ _readme_file = os.path.join(_this_dir, 'README.md')
 try:
     sys.path.insert(0, os.path.join(_this_dir, 'python'))
 
-    import opencc  # noqa
-    _libopencc_built = True
+    import opentc  # noqa
+    _libopentc_built = True
 except ImportError:
-    _libopencc_built = False
+    _libopentc_built = False
 
 
 def get_version_info():
     version_info = ['1', '0', '0']
     version_pattern = re.compile(
-        r'OPENCC_VERSION_(MAJOR|MINOR|REVISION) (\d+)')
+        r'OPENTC_VERSION_(MAJOR|MINOR|REVISION) (\d+)')
     with open(_cmake_file, 'rb') as f:
         for l in f:
             match = version_pattern.search(l.decode('utf-8'))
@@ -181,15 +181,15 @@ setuptools.setup(
     description=" Conversion between Traditional and Simplified Chinese",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/BYVoid/OpenCC",
+    url="https://github.com/zunimalik777/OpenTC",
 
     packages=packages,
-    package_dir={'opencc': 'python/opencc'},
+    package_dir={'opentc': 'python/opencc'},
     package_data={str('opencc'): [
         'clib/opencc_clib*',
-        'clib/share/opencc/*',
+        'clib/share/opentc/*',
     ]},
-    ext_modules=[OpenCCExtension('opencc.clib.opencc_clib', 'python')],
+    ext_modules=[OpenTCExtension('opencc.clib.opentc_clib', 'python')],
     cmdclass={
         'build_ext': BuildExtCommand,
         'bdist_wheel': BDistWheelCommand
@@ -213,5 +213,5 @@ setuptools.setup(
         'Topic :: Text Processing :: Linguistic',
     ],
     license='Apache License 2.0',
-    keywords=['opencc', 'convert', 'chinese']
+    keywords=['opentc', 'convert', 'chinese']
 )
