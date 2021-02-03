@@ -264,7 +264,7 @@ print('Embedding layer is:', embedded_sequences)
 L = (LSTM(n_x,
             activation='tanh', 
             dropout=0.2, 
-            recurrent_dropout=0.5, 
+            recurrent_dropout=0.2, 
             return_sequences=True,
             kernel_initializer='he_uniform',
             name='Pre-LSTM'))(embedded_sequences)
