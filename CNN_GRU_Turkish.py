@@ -237,7 +237,7 @@ time_steps = MAX_LENGTH = 270`
 batch_size = 32
 momentum = 0.9
 l2_regularization = 0.001
-learning_rate = 0.01
+learning_rate = 0.001
 n_x = 32   
 epochs = 10
 time_steps = MAX_LENGTH
